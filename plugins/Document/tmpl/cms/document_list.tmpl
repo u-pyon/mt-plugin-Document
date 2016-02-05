@@ -1,0 +1,61 @@
+<mt:setvar name="page_title" value="<__trans phrase="Download Documents">">
+<$mt:setvar name="position_actions_bottom" value="1"$>
+<mt:setvarblock name="related_content">
+    <$mtapp:PageActions$>
+</mt:setvarblock>
+<mt:setvarblock name="system_msg">
+    <mt:if name="error">
+        <mtapp:statusmsg
+           id="generic-error"
+           class="error"
+           can_close="0">
+          <mt:var name="error">
+        </mtapp:statusmsg>
+    </mt:if>
+    <mt:if name="saved">
+        <mtapp:statusmsg
+           id="saved"
+           class="success"
+           can_close="0">
+          <mt:var name="success">
+        </mtapp:statusmsg>
+    </mt:if>
+</mt:setvarblock>
+
+<mt:include name="include/header.tmpl">
+
+<mtapp:form id="download_document_form" name="download_document_form" mode="download_documents" object_type="blog">
+  <input type="hidden" name="cfg_screen" value="cfg_prefs" />
+  <mtapp:settinggroup id="templates-download">
+    <h2><__trans phrase="Templates" ></h2>
+    <p><__trans phrase="You can download templates csv list." /></p>
+    <input type="hidden" name="template_list" value="1" />
+    <mtapp:setting
+      id="no-widget"
+      label="<__trans phrase="Widget Templates">"
+      hint="<__trans phrase="Except widgetset or widget templates from csv.">"
+      show_hint="1">
+      <input type="checkbox" name="no_widget" value="1" checked="1" /> <__trans phrase="No Widget" />
+    </mt:app:setting>
+    <mtapp:setting
+      id="no-system"
+      label="<__trans phrase="System Templates">"
+      hint="<__trans phrase="Except system templates from csv.">"
+      show_hint="1">
+      <input type="checkbox" name="no_system" value="1" /> <__trans phrase="No System" />
+     </mt:app:setting>
+
+
+    <mt:setvarblock name="action_buttons">
+      <button
+         type="submit"
+         accesskey="s"
+         class="save action primary button">
+        <__trans phrase="Download CSV">
+      </button>
+    </mt:setvarblock>
+  </mtapp:settinggroup>
+  <mt:include name="include/actions_bar.tmpl" bar_position="bottom" hide_pager="1" settings_bar="1">
+</mtapp:form>
+
+<mt:include name="include/footer.tmpl">
