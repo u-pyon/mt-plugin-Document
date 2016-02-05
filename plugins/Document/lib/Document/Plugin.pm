@@ -6,7 +6,7 @@ use warnings;
 use base qw(MT::Plugin);
 
 use vars qw( $VERSION $OLD_VERSION $SCHEMA_VERSION );
-$VERSION = '1.00';
+$VERSION = '0.100';
 
 
 use Data::Dumper;

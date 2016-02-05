@@ -1,4 +1,4 @@
-mt-plugin-Document
+mt-plugin-Document ver 0.1
 ===
 
 Movable Typeを運用しているときに、CMS設計書を更新するためのデータをCSVとしてダウンロードする機能を提供するプラグインです。
